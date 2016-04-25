@@ -1,0 +1,11 @@
+<img src="<%= @var.photo %>">
+<p>Name <%= @var.name %></p>
+<p>Comment <%= @var.comment %></p>
+<p>Date <%= @var.date %></p>
+<p>Time <%= @var.time %></p>
+<p>Comments:</p>
+    <ul>
+        <%@com.each do |pointer|%>
+        <li> <%=pointer.body%> </li>
+        <%end%>
+    </ul>

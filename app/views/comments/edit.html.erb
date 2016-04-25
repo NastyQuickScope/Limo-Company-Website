@@ -1,0 +1,19 @@
+<% if @var.errors.present? %>
+<p>The following error prevented your photo for being saved</p>
+<ul>
+    <%@var.errors.full_messeges.each do |messege| %>
+    <li><%= message %></li>
+    <% end %>
+</ul>
+<% end %>
+<%= form_tag(photo_path(@var.id), :method => :patch) do %>
+<label for="comments"> Comments
+<input type="text" id="comments" name="comments" value="<%= @var.comments%>"> </label>
+<label for="name"> Name
+<input type="text" id="name" name="name" value="<%= @var.name%>"> </label>
+<label for="date"> Date
+<input type="text" id="date" name="date" value="<%= @var.date%>"> </label>
+<label for="time"> Time
+<input type="text" id="time" name="time" value="<%= @var.time%>"> </label>
+<input type="submit">
+<% end %>

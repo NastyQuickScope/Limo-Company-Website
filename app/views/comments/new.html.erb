@@ -1,0 +1,19 @@
+<h1>Create a new record </h1>
+<% if @var.errors.present %>
+    <p>The following error prevent your photo for being saved</p>
+    <ul>
+        <% @var.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+    </ul> 
+<% end %>
+
+<%= form_tag(comments_path) do %>
+<label for="name"> Name
+    <input type="text" id="name" name="name" value=<%=@var.name%> > </label>
+<label for="comments"> Comments
+    <input type="text" id="comments" name="comment" value=<%=@var.comment%> > </label>
+<label for="date"> Date
+    <input type="text" id="date" name="date" value=<%=@var.date%> > </label>
+<label for="time"> Time
+    <input type="text" id="time" name="time" value=<%=@var.time%> > </label>
